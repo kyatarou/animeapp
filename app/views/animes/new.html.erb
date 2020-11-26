@@ -1,0 +1,272 @@
+<h1>投稿フォーム</h1>
+<h3>基本情報</h3>
+<%= form_with model: @anime, local: true do |f| %>
+    <P>タイトル（正式名称）</P>
+    <%= f.text_field :title %>
+    <P>おすすめ度（0.0~5.0）※少数第１位まで<br>1.0:超コアな人だけ<br>2.0:好きな人は好き<br>3.0:見て損はない<br>4.0:人におすすめできる<br>5.0:不朽の名作</P>
+    <%= f.text_field :valuation %>
+    <P>放送年</P>
+    <%= f.text_field :created_year %>
+    <P>制作会社</P>
+    <%= f.text_field :company %>
+    <P>監督</P>
+    <%= f.text_field :director %>
+    <P>主要キャスト</P>
+    <%= f.text_field :cast %>
+    <P>キービジュアル（画像）</P>
+    <div class="field">
+        <%= f.label :image %>
+        <%= f.file_field :image %>
+    </div>
+    <P>引用元</P>
+    <%= f.text_field :source %>
+    <P>コメント</P>
+    <%= f.text_field :comment %>
+
+    <br>
+
+    <h3>SF</h3>
+
+　　<p>
+    <%= f.label :situation, 'SF(設定条件)' %>
+    <%= f.collection_check_boxes(:situation_ids, Genre.find(1).situations, :id, :name) do |situation| %> 
+      <%= situation.label do %>
+        <%= situation.check_box %>
+        <%= situation.text %>
+      <% end %>
+    <% end %>
+  </p>　
+
+  <p>
+    <%= f.label :emotion, 'SF(感情条件)' %>
+    <%= f.collection_check_boxes(:emotion_ids, Genre.find(1).emotions, :id, :name) do |emotion| %> 
+      <%= emotion.label do %>
+        <%= emotion.check_box %>
+        <%= emotion.text %>
+      <% end %>
+    <% end %>
+  </p>　
+
+  <h3>ロボット/メカ</h3>
+
+　　<p>
+    <%= f.label :situation, 'ロボット/メカ(設定条件)' %>
+    <%= f.collection_check_boxes(:situation_ids, Genre.find(2).situations, :id, :name) do |situation| %> 
+      <%= situation.label do %>
+        <%= situation.check_box %>
+        <%= situation.text %>
+      <% end %>
+    <% end %>
+  </p>　
+
+  <p>
+    <%= f.label :emotion, 'ロボット/メカ(感情条件)' %>
+    <%= f.collection_check_boxes(:emotion_ids, Genre.find(2).emotions, :id, :name) do |emotion| %> 
+      <%= emotion.label do %>
+        <%= emotion.check_box %>
+        <%= emotion.text %>
+      <% end %>
+    <% end %>
+  </p>　
+
+  <h3>アクション/バトル</h3>
+
+　　<p>
+    <%= f.label :situation, 'アクション/バトル(設定条件)' %>
+    <%= f.collection_check_boxes(:situation_ids, Genre.find(3).situations, :id, :name) do |situation| %> 
+      <%= situation.label do %>
+        <%= situation.check_box %>
+        <%= situation.text %>
+      <% end %>
+    <% end %>
+  </p>　
+
+  <p>
+    <%= f.label :emotion, 'アクション/バトル(感情条件)' %>
+    <%= f.collection_check_boxes(:emotion_ids, Genre.find(3).emotions, :id, :name) do |emotion| %> 
+      <%= emotion.label do %>
+        <%= emotion.check_box %>
+        <%= emotion.text %>
+      <% end %>
+    <% end %>
+  </p>　
+
+  <h3>コメディ/ギャグ</h3>
+
+　　<p>
+    <%= f.label :situation, 'コメディ/ギャグ(設定条件)' %>
+    <%= f.collection_check_boxes(:situation_ids, Genre.find(4).situations, :id, :name) do |situation| %> 
+      <%= situation.label do %>
+        <%= situation.check_box %>
+        <%= situation.text %>
+      <% end %>
+    <% end %>
+  </p>　
+
+  <p>
+    <%= f.label :emotion, 'コメディ/ギャグ(感情条件)' %>
+    <%= f.collection_check_boxes(:emotion_ids, Genre.find(4).emotions, :id, :name) do |emotion| %> 
+      <%= emotion.label do %>
+        <%= emotion.check_box %>
+        <%= emotion.text %>
+      <% end %>
+    <% end %>
+  </p>　
+
+  <h3>恋愛/ラブコメ</h3>
+
+　　<p>
+    <%= f.label :situation, '恋愛/ラブコメ(設定条件)' %>
+    <%= f.collection_check_boxes(:situation_ids, Genre.find(5).situations, :id, :name) do |situation| %> 
+      <%= situation.label do %>
+        <%= situation.check_box %>
+        <%= situation.text %>
+      <% end %>
+    <% end %>
+  </p>　
+
+  <p>
+    <%= f.label :emotion, '恋愛/ラブコメ(感情条件)' %>
+    <%= f.collection_check_boxes(:emotion_ids, Genre.find(5).emotions, :id, :name) do |emotion| %> 
+      <%= emotion.label do %>
+        <%= emotion.check_box %>
+        <%= emotion.text %>
+      <% end %>
+    <% end %>
+  </p>　
+
+  <h3>日常</h3>
+
+　　<p>
+    <%= f.label :situation, '日常(設定条件)' %>
+    <%= f.collection_check_boxes(:situation_ids, Genre.find(6).situations, :id, :name) do |situation| %> 
+      <%= situation.label do %>
+        <%= situation.check_box %>
+        <%= situation.text %>
+      <% end %>
+    <% end %>
+  </p>　
+
+  <p>
+    <%= f.label :emotion, '日常(感情条件)' %>
+    <%= f.collection_check_boxes(:emotion_ids, Genre.find(6).emotions, :id, :name) do |emotion| %> 
+      <%= emotion.label do %>
+        <%= emotion.check_box %>
+        <%= emotion.text %>
+      <% end %>
+    <% end %>
+  </p>　
+
+  <h3>スポーツ/競技</h3>
+
+　　<p>
+    <%= f.label :situation, 'スポーツ/競技(設定条件)' %>
+    <%= f.collection_check_boxes(:situation_ids, Genre.find(7).situations, :id, :name) do |situation| %> 
+      <%= situation.label do %>
+        <%= situation.check_box %>
+        <%= situation.text %>
+      <% end %>
+    <% end %>
+  </p>　
+
+  <p>
+    <%= f.label :emotion, 'スポーツ/競技(感情条件)' %>
+    <%= f.collection_check_boxes(:emotion_ids, Genre.find(7).emotions, :id, :name) do |emotion| %> 
+      <%= emotion.label do %>
+        <%= emotion.check_box %>
+        <%= emotion.text %>
+      <% end %>
+    <% end %>
+  </p>　
+
+  <h3>ホラー</h3>
+
+　　<p>
+    <%= f.label :situation, 'ホラー(設定条件)' %>
+    <%= f.collection_check_boxes(:situation_ids, Genre.find(8).situations, :id, :name) do |situation| %> 
+      <%= situation.label do %>
+        <%= situation.check_box %>
+        <%= situation.text %>
+      <% end %>
+    <% end %>
+  </p>　
+
+  <p>
+    <%= f.label :emotion, 'ホラー(感情条件)' %>
+    <%= f.collection_check_boxes(:emotion_ids, Genre.find(8).emotions, :id, :name) do |emotion| %> 
+      <%= emotion.label do %>
+        <%= emotion.check_box %>
+        <%= emotion.text %>
+      <% end %>
+    <% end %>
+  </p>　
+
+  <h3>サスペンス</h3>
+
+　　<p>
+    <%= f.label :situation, 'サスペンス(設定条件)' %>
+    <%= f.collection_check_boxes(:situation_ids, Genre.find(9).situations, :id, :name) do |situation| %> 
+      <%= situation.label do %>
+        <%= situation.check_box %>
+        <%= situation.text %>
+      <% end %>
+    <% end %>
+  </p>　
+
+  <p>
+    <%= f.label :emotion, 'サスペンス(感情条件)' %>
+    <%= f.collection_check_boxes(:emotion_ids, Genre.find(9).emotions, :id, :name) do |emotion| %> 
+      <%= emotion.label do %>
+        <%= emotion.check_box %>
+        <%= emotion.text %>
+      <% end %>
+    <% end %>
+  </p>　
+
+  <h3>推理</h3>
+
+　　<p>
+    <%= f.label :situation, '推理(設定条件)' %>
+    <%= f.collection_check_boxes(:situation_ids, Genre.find(10).situations, :id, :name) do |situation| %> 
+      <%= situation.label do %>
+        <%= situation.check_box %>
+        <%= situation.text %>
+      <% end %>
+    <% end %>
+  </p>　
+
+  <p>
+    <%= f.label :emotion, '推理(感情条件)' %>
+    <%= f.collection_check_boxes(:emotion_ids, Genre.find(10).emotions, :id, :name) do |emotion| %> 
+      <%= emotion.label do %>
+        <%= emotion.check_box %>
+        <%= emotion.text %>
+      <% end %>
+    <% end %>
+  </p>　
+
+  <h3>ヒューマンドラマ</h3>
+
+　　<p>
+    <%= f.label :situation, 'ヒューマンドラマ(設定条件)' %>
+    <%= f.collection_check_boxes(:situation_ids, Genre.find(11).situations, :id, :name) do |situation| %> 
+      <%= situation.label do %>
+        <%= situation.check_box %>
+        <%= situation.text %>
+      <% end %>
+    <% end %>
+  </p>　
+
+  <p>
+    <%= f.label :emotion, 'ヒューマンドラマ(感情条件)' %>
+    <%= f.collection_check_boxes(:emotion_ids, Genre.find(11).emotions, :id, :name) do |emotion| %> 
+      <%= emotion.label do %>
+        <%= emotion.check_box %>
+        <%= emotion.text %>
+      <% end %>
+    <% end %>
+  </p>　
+
+  
+    <%= f.submit %>
+<% end %> 

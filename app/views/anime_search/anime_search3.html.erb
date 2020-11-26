@@ -1,0 +1,15 @@
+<h1>設定のこだわりは？</h1>
+
+<%= form_with(url: anime_search_anime_search4_path, method: :get, local: true) do |f| %>
+
+    <%= f.label :situation %>
+    <br>
+        <%= f.collection_check_boxes(:situation_ids, @situations, :id, :name) do |situation| %> 
+        <%= situation.label do %>
+            <%= situation.check_box %>
+            <%= situation.text %>
+        <% end %>
+    <% end %>
+    <br>
+     <%= f.submit '次へ', name: nil %>
+<% end %>

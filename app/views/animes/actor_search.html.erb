@@ -1,0 +1,11 @@
+<h1>検索</h1>
+
+<%= form_with url: animes_actor_search_path, method: :get, local: true do |form| %>
+  <%= form.text_field :actor_key %>
+  <%= form.submit 'Search', name: nil %>
+<% end %>
+
+<% @animes.each do |anime| %>  
+  <p><%= anime.title%></p>
+  <br>
+<% end %>
