@@ -1,0 +1,19 @@
+<div class="animes-index">
+    <% @animes.each do |anime| %>
+        <div class="content">
+            <h1 class="title">
+                <%= anime.title %>
+            </h1>
+            <%= image_tag anime.image_url, :width => '300', class: 'image' %>
+            <div class="container">
+                <p>制作年：<%= anime.created_year %></p>
+                <p>制作会社：<%= anime.company %></p>
+                <p>監督：<%= anime.director %></p>
+                <p>声優：<%= anime.actor %></p>
+                <p>評価<%= anime.valuation %></p>
+                <p>コメント</p>
+                <%= anime.comment %>
+            </div>
+        </div>
+    <% end %>
+</div>
