@@ -11,10 +11,10 @@
 
   <body>
     <header class="layout-header">
-      <div class="layout-title">animeapp</div>
+      <%= link_to('Animeapp', root_path, {class: "layout-title"}) %>
       <div class="layout-header-right">
-        <div class="layout-search">検索</div>
-        <div class="layout-post">投稿する</div>
+        <%= link_to('検索', anime_search_anime_search1_path, {class: "layout-search"}) %>
+        <%= link_to('投稿', animes_new_path, {class: "layout-post"}) %>
       </div>
     </header>
     <%= yield %>

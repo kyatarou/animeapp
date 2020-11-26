@@ -1,6 +1,14 @@
+<div class="anime-search-1">
 <h1>一覧</h1>
-
-<% @selected_animes.each do |anime| %>  
-  <p><%= anime.title%></p>
-  <br>
+<div class="anime-search1">
+<% if @selected_animes %>
+  <p>条件に該当するアニメはありませんでした。</p>
+<% else %>
+  <% @selected_animes.each do |anime| %>  
+    <p><%= anime.title%></p>
+    <br>
+  <% end %>
 <% end %>
+</div>
+</div>
+
